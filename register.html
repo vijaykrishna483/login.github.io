@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration</title>
+    <link rel="stylesheet" href="loginpage.css">
+</head>
+<body>
+    <div class="container1">
+        <h2 class="userreg">User Registration</h2>
+        <form action="	https://sheetdb.io/api/v1/u6x6ukupjzshv" method="post" id="sheetdb-form" >
+        <input type="text"  placeholder="Username" name="data[username]"required>
+        <br>
+        <input type="email" placeholder="email id" name="data[email]"required>
+        <br>
+        <input type="password" placeholder="password" name="data[password]"required><br><br>
+        <input type="submit" value="Register" class="submit">
+        </form>
+      
+</div>
+        
+  <script>
+            var form = document.getElementById('sheetdb-form');
+        form.addEventListener("submit", e => {
+          e.preventDefault();
+          fetch(form.action, {
+              method : "POST",
+              body: new FormData(document.getElementById("sheetdb-form")),
+          }).then(
+              response => response.json()
+          ).then((html) => {
+            // you can put any JS code here
+            window.open('page2.html', '_blank');
+
+          });
+        });
+        </script>
+</body>
+</html>
